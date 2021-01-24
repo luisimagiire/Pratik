@@ -94,10 +94,18 @@ impl alloc::string::ToString for Practice {
 */
 impl std::fmt::Display for Practice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let lvl = match self.repetition_lvl {
+            SpacedRepetition::New => "[NEW]",
+            SpacedRepetition::One => "*",
+            SpacedRepetition::Seven => "**",
+            SpacedRepetition::Sixteen => "***",
+            SpacedRepetition::ThrityFive => "****",
+            SpacedRepetition::Done => "[DONE]",
+        };
         write!(
             f,
-            "{:?} - {:?} - {:?} - {:?}",
-            self.practice_type, self.scale, self.key, self.rythm
+            "{:} {:?} - {:?} - {:?} - {:?}",
+            &lvl, self.practice_type, self.scale, self.key, self.rythm
         )
     }
 }
