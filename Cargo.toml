@@ -1,0 +1,19 @@
+[package]
+name = "pratik"
+version = "0.1.0"
+authors = ["Luis Henrique Imagiire <luishenrique.imagiire@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+getopts = "0.2"
+serde = { version = "1.0.120", features = ["derive"] }
+serde_yaml = "0.8"
+anyhow = "1.0.38"
+chrono = {version = "0.4", features = ["serde"] }
+serde_json = "1.0"
+itertools = "0.10.0"
+dialoguer = "0.7.1"
+rand = "0.5"
+rand_derive = "0.5"
